@@ -12,6 +12,7 @@
 --accent-hover: #2563eb;
 --error-bg: #fecaca;
 --error-text: #b91c1c;
+--wrong-text: #8b0000;
 --hint-bg: #bbf7d0;
 --hint-text: #059669;
 --btn-shadow: 0 2px 8px rgba(34,41,47,0.10);
@@ -94,6 +95,7 @@ cursor: default;
 }
 .cell.selected { background: #dbeafe; }
 .cell.error { background: var(--error-bg); color: var(--error-text); }
+.cell.wrong { color: var(--wrong-text); }
 .cell.hint { background: var(--hint-bg); color: var(--hint-text); }
 .row-highlight { background: rgba(255,255,0,0.16); }
 .col-highlight { background: rgba(0,255,255,0.14); }
