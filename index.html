@@ -357,7 +357,8 @@
       for (let r=0;r<9;r++) for (let c=0;c<9;c++) {
         const v=current[r][c]; if (!v||readonly[r][c]) continue;
         for (let i=0;i<9;i++) {
-          if ((i!==c && current[r][i]===v) || (i!==r && current[i][c]===v)) markErr(i,i===c?r:r,i===c?c:i);
+          if(i!==c && current[r][i]===v) markErr(r, i);
+          if(i!==r && current[i][c]===v) markErr(i, c);
         }
         const sr=Math.floor(r/3)*3, sc=Math.floor(c/3)*3;
         for (let i=0;i<3;i++) for (let j=0;j<3;j++) {
