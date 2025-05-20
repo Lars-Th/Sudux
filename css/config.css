@@ -1,0 +1,21 @@
+:root {
+  --bg: #f6f7fb;
+  --card-bg: #fff;
+  --cell-bg: #f9fafb;
+  --cell-readonly-bg: #e5e7eb;
+  --border-color: #bbb;
+  --border-block: #111;
+  --border-strong: #222;
+  --text-primary: #222b45;
+  --text-secondary: #7c8ba1;
+  --accent: #60a5fa;
+  --accent-hover: #2563eb;
+  --error-bg: #fecaca;
+  --error-text: #b91c1c;
+  --hint-bg: #bbf7d0;
+  --hint-text: #059669;
+  --btn-shadow: 0 2px 8px rgba(34,41,47,0.10);
+  --btn-active: #2563eb;
+  --btn-block-bg: #fff;
+  --btn-block-hover: #f0f6ff;
+}
