@@ -222,3 +222,18 @@ margin-top: 0.5rem;
     border-radius: 6px;
   }
 }
+
+body.dark-mode {
+  --bg: #1e1e1e;
+  --card-bg: #2b2b2b;
+  --cell-bg: #3a3a3a;
+  --cell-readonly-bg: #444;
+  --text-prefilled: #aaa;
+  --border-color: #666;
+  --border-block: #ddd;
+  --border-strong: #eee;
+  --text-primary: #f0f0f0;
+  --text-secondary: #bbb;
+  --btn-block-bg: #444;
+  --btn-block-hover: #555;
+}

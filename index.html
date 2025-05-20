@@ -23,8 +23,13 @@
     <p><a href="guide.html">Steg-för-steg guide</a></p>
   </div>
   <script>
+    const diffSel = document.getElementById('difficulty');
+    const storedDiff = localStorage.getItem('sudokuDifficulty');
+    if(storedDiff) diffSel.value = storedDiff;
+
     document.getElementById('startBtn').onclick = () => {
-      const diff = document.getElementById('difficulty').value;
+      const diff = diffSel.value;
+      localStorage.setItem('sudokuDifficulty', diff);
       window.location.href = `game.html?difficulty=${diff}`;
     };
   </script>
