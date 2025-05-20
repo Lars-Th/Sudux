@@ -2,7 +2,7 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>Sudoku Webapp – Lär dig & Spela</title>
+  <title>Sudoku-guide – Steg för steg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
@@ -188,8 +188,8 @@
   </style>
 </head>
 <body>
-  <h1>Sudoku Webapp</h1>
-  <p><a href="guide.html">Steg-för-steg guide</a></p>
+  <h1>Sudoku – Steg för steg</h1>
+  <div id="stepText" style="margin:0.5rem 0;font-weight:600;"></div>
   <div class="app-container">
     <div class="btn-bar">
       <select id="difficulty">
@@ -214,6 +214,7 @@
     <button class="undo-btn" id="undoBtn" title="Ångra senaste drag">
       <span style="font-size:1.3em;line-height:1;vertical-align:middle;">&#8592;</span>
     </button>
+    <button class="btn" id="nextStep" style="margin-top:0.5rem;">Nästa steg</button>
     <div id="msg"></div>
     <div class="helper-panel hidden" id="helper-panel">
       <strong>Hjälpfunktion & Tekniker:</strong>
@@ -242,6 +243,8 @@
     const timerEl = document.getElementById('timer');
     const undoBtn = document.getElementById('undoBtn');
     const numberPad = document.getElementById('number-pad');
+    const stepEl = document.getElementById('stepText');
+    const nextBtn = document.getElementById('nextStep');
     // --- Timer ---
     function startTimer() {
       clearInterval(timerInterval);
@@ -463,8 +466,23 @@
     document.getElementById('hintBtn').onclick=showHint;
     document.getElementById('difficulty').onchange=newGame;
     undoBtn.onclick = undo;
+
+    const steps = [
+      'Steg 1: Börja med att hitta \u003cstrong\u003eNaked Singles\u003c/strong\u003e.',
+      'Steg 2: Leta efter \u003cstrong\u003eHidden Singles\u003c/strong\u003e i varje rad, kolumn och box.',
+      'Steg 3: Använd \u003cstrong\u003eNaked Pairs\u003c/strong\u003e för att ta bort kandidater.',
+      'Steg 4: Prova \u003cstrong\u003ePointing Pairs\u003c/strong\u003e och \u003cstrong\u003eBox/Line Reduction\u003c/strong\u003e.',
+      'Steg 5: Fortsätt tills pusslet är löst!'
+    ];
+    let stepIndex = 0;
+    function showStep() {
+      stepEl.innerHTML = steps[stepIndex];
+      nextBtn.disabled = stepIndex >= steps.length - 1;
+    }
+    nextBtn.onclick = () => { if (stepIndex < steps.length - 1) { stepIndex++; showStep(); } };
     // Init
     newGame();
+    showStep();
   })();
   </script>
 </body>
