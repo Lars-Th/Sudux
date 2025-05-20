@@ -3,6 +3,7 @@
 --card-bg: #fff;
 --cell-bg: #f9fafb;
 --cell-readonly-bg: #e5e7eb;
+--text-prefilled: #9ca3af;
 --border-color: #bbb;
 --border-block: #111;
 --border-strong: #222;
@@ -87,8 +88,8 @@ transition: background .2s, color .2s;
 .cell[data-r="3"],
 .cell[data-r="6"]      { border-top: 2.5px solid var(--border-block);}
 .cell[data-readonly="true"] {
-background: var(--cell-readonly-bg);
-color: var(--text-secondary);
+background: var(--cell-bg);
+color: var(--text-prefilled);
 font-weight: bold;
 cursor: default;
 }
