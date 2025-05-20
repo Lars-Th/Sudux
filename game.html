@@ -170,6 +170,7 @@
         else { inp.value=current[r][c]||''; }
         inp.onfocus = () => { highlightRC(r,c, cell); };
         inp.oninput = e => handleInput(e, r, c);
+        inp.onkeydown = e => handleKeyDown(e, r, c);
         cell.appendChild(inp);
 
         const notesEl = document.createElement('div');
@@ -208,6 +209,22 @@
       }
       updateErrors();
       highlightNumberPad();
+    }
+
+    function handleKeyDown(e, r, c) {
+      if(!notesMode) return;
+      if(e.key>='1' && e.key<='9') {
+        e.preventDefault();
+        const n=+e.key;
+        const arr=notes[r][c];
+        const idx=arr.indexOf(n);
+        if(idx>-1) arr.splice(idx,1); else arr.push(n);
+        render();
+      } else if(e.key==='Backspace' || e.key==='Delete' || e.key==='0') {
+        e.preventDefault();
+        notes[r][c]=[];
+        render();
+      }
     }
     function updateErrors() {
       document.querySelectorAll('.cell').forEach(cell=>cell.classList.remove('error','hint'));
