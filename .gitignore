@@ -1,0 +1,13 @@
+# Systemfiler
+.DS_Store
+Thumbs.db
+
+# Editor-mappar
+.vscode/
+.idea/
+
+# Node-moduler (om du senare lägger till npm)
+node_modules/
+
+# Loggfiler
+*.log 
