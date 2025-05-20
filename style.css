@@ -201,7 +201,21 @@ margin-top: 0.5rem;
 .hidden { display: none; }
 #msg { min-height: 1.3em; color: var(--error-text); font-weight: 500; }
 @media (max-width: 600px) {
-.sudoku-grid { max-width: 98vw; }
-.cell { font-size: 2.9vw; }
-.app-container { width: 99vw; min-width: 0; }
+  .sudoku-grid { max-width: 98vw; }
+  .cell { font-size: 2.9vw; }
+  .app-container {
+    width: 100vw;
+    min-width: 0;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  body { align-items: stretch; }
+  .btn,
+  .number-btn,
+  .undo-btn {
+    box-shadow: none;
+    border-radius: 6px;
+  }
 }
